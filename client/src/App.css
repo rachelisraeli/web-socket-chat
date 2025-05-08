@@ -1,0 +1,390 @@
+/* עיצוב כללי */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  direction: rtl;
+  background-color: #f5f7fb;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* עיצוב מסך התחברות */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+}
+
+.login-box h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #4a7dff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #3a6eff;
+}
+
+/* עיצוב מסך צ'אט ראשי */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* עיצוב רשימת צ'אטים */
+.chat-list {
+  width: 30%;
+  max-width: 320px;
+  background-color: white;
+  border-left: 1px solid #e1e4e8;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-list-header {
+  padding: 15px;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f7fb;
+}
+
+.chat-list-header h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.new-chat-button {
+  padding: 8px 15px;
+  background-color: #4a7dff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.new-chat-button:hover {
+  background-color: #3a6eff;
+}
+
+.chat-item {
+  padding: 15px;
+  border-bottom: 1px solid #e1e4e8;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-item:hover {
+  background-color: #f5f7fb;
+}
+
+.chat-item.active {
+  background-color: #e6f2ff;
+}
+
+.chat-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.chat-item-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.chat-item-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.chat-item-last-message {
+  font-size: 13px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-item .online-status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.chat-item .online-status.online {
+  background-color: #4caf50;
+}
+
+.chat-item .online-status.offline {
+  background-color: #ccc;
+}
+
+/* עיצוב אזור שיחה */
+.conversation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fb;
+}
+
+.conversation-header {
+  padding: 15px;
+  background-color: white;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conversation-header h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.conversation-header .chat-info {
+  display: flex;
+  align-items: center;
+}
+
+.typing-indicator {
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.conversation-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  align-self: flex-start;
+  background-color: #e6f2ff;
+}
+
+.message.received {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-user {
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #666;
+}
+
+.message-content {
+  font-size: 14px;
+}
+
+.conversation-input {
+  padding: 15px;
+  background-color: white;
+  border-top: 1px solid #e1e4e8;
+  display: flex;
+}
+
+.conversation-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.conversation-input button {
+  padding: 10px 20px;
+  background-color: #4a7dff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.conversation-input button:hover {
+  background-color: #3a6eff;
+}
+
+.no-conversation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7fb;
+  color: #666;
+  font-size: 18px;
+}
+
+/* עיצוב חלון יצירת צ'אט חדש */
+.new-chat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.new-chat-modal-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+}
+
+.new-chat-modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.new-chat-modal-content input,
+.new-chat-modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-buttons button.cancel {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.modal-buttons button.create {
+  background-color: #4a7dff;
+  color: white;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.9;
+}
+
+.user-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-checkbox input {
+  margin-left: 10px;
+  width: auto;
+}
+
+.user-checkbox label {
+  display: flex;
+  align-items: center;
+}
+
+.user-checkbox .online-status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.user-checkbox .online-status.online {
+  background-color: #4caf50;
+}
+
+.user-checkbox .online-status.offline {
+  background-color: #ccc;
+}
